@@ -20,6 +20,13 @@ componentDidMount() {
        });
    }
 
+createRoom = (event) => {
+  this.roomsRef.push({
+    name: this.input.value
+  })
+}
+
+
 render() {
   return (
     <div className="RoomList">
@@ -32,6 +39,14 @@ render() {
            })
          }
        </ul>
+         <input
+            className="Input"
+            type="text"
+            ref={(input) => this.input=input}
+            />
+          <button
+          className="AddButton"
+          onClick={this.createRoom}>Add New Room</button>
     </div>
   )
  }
