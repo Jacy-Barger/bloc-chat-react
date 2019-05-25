@@ -20,10 +20,11 @@ componentDidMount() {
        });
    }
 
+
 createRoom = (event) => {
   this.roomsRef.push({
     name: this.input.value
-  })
+  });
 }
 
 
@@ -39,6 +40,7 @@ render() {
            })
          }
        </ul>
+       <form>
          <input
             className="Input"
             type="text"
@@ -47,6 +49,7 @@ render() {
           <button
           className="AddButton"
           onClick={this.createRoom}>Add New Room</button>
+        </form>
     </div>
   )
  }
