@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import RoomList from './components/RoomList'
+import MessageList from './components/MessageList'
 import * as firebase from 'firebase';
 
 // Your web app's Firebase configuration
@@ -17,6 +18,20 @@ import * as firebase from 'firebase';
  firebase.initializeApp(firebaseConfig);
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+  this.state = {
+      roomID: 2
+  };
+}
+
+// Use a click event to make the state of the correct messagelist/roomlist
+// appear in the state object of the App.js component.
+
+
+
+
   render() {
   return (
     <div className="App">
@@ -28,6 +43,11 @@ class App extends Component {
         <div className="List">
           <RoomList
            firebase={firebase} />
+        </div>
+        <div className="Message">
+          <MessageList
+          firebase={firebase}
+          roomID={this.state.roomID} />
         </div>
     </div>
   );

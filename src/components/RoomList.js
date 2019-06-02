@@ -54,7 +54,7 @@ render() {
        <form onSubmit={ (event) => this.handleSubmit(event) }>
           <input
               className="Input"
-              type="text" 
+              type="text"
               onChange={(event) => this.handleChange(event)}
               value={ this.state.newRoomSubmission }
               ref={(input) => this.input=input}/>
