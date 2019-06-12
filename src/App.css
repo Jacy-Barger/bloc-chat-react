@@ -44,10 +44,60 @@
   color: #fff;
   font-family: 'lato', 'arial', 'sans-serif';
   font-weight: 600;
+  display: flow-root;
+  padding-left: 10px
 }
 
 .Header {
   padding-top: 20px;
   padding-left: 20px;
   font-size: 30px;
+}
+
+.Message {
+  display: inline-flex;
+  float: left;
+  color: black;
+  position: relative;
+  left: 120%;
+}
+
+.messagecontent {
+  position: fixed;
+  bottom: 80%;
+}
+
+.messagetimestamp {
+  position: fixed;
+  left: 75%;
+  bottom: 80%;
+}
+
+.sendmessageform {
+  position: fixed;
+  top: 85%
+}
+
+.MessageInput {
+  width: 700px;
+}
+
+.rooms:hover {
+  cursor: pointer;
+}
+
+.individualroom {
+  list-style: none;
+  padding: 5px;
+}
+
+.individualroom:hover {
+  background-color: #0a7091;
+  margin-right: 50px;
+  display: inline-block;
+}
+
+.individualmessage {
+  list-style: none;
+  padding: 5px;
 }

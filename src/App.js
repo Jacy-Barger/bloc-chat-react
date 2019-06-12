@@ -20,17 +20,16 @@ import * as firebase from 'firebase';
 class App extends Component {
   constructor(props) {
     super(props);
-
   this.state = {
-      roomID: 2
+      currentRoomId: '',
   };
 }
 
-// Use a click event to make the state of the correct messagelist/roomlist
-// appear in the state object of the App.js component.
-
-
-
+selectedRoom = (id) => {
+  this.setState({
+    currentRoomId: id,
+  });
+}
 
   render() {
   return (
@@ -42,13 +41,16 @@ class App extends Component {
       </header>
         <div className="List">
           <RoomList
-           firebase={firebase} />
+           firebase={firebase}
+           selectedRoom={this.selectedRoom}
+         />
         </div>
         <div className="Message">
           <MessageList
-          firebase={firebase}
-          roomID={this.state.roomID} />
-        </div>
+            firebase={firebase}
+            currentRoomId={this.state.currentRoomId}
+          />
+       </div>
     </div>
   );
  }

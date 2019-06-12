@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './../App.css';
 
 class MessageList extends Component {
   constructor(props) {
@@ -22,51 +23,69 @@ this.state = {
      }
 
 
- createMessage = (event) => {
+ createMessage = (e) => {
    this.messagesRef.push({
-     name: this.input.value
+     content: this.state.newMessageSubmission,
+     roomID: this.props.currentRoomId,
+     sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
+     username: "Bob",
    });
  }
 
- handleSubmit = (event) => {
-   event.preventDefault();
+ handleSubmit = (e) => {
+   e.preventDefault();
    if (!this.state.newMessageSubmission) {return}
    this.setState({  newMessageSubmission: '' });
  }
 
- handleChange = (event) => {
-   this.setState({ newMessageSubmission: event.target.value })
+ handleChange = (e) => {
+   this.setState({ newMessageSubmission: e.target.value })
  }
 
  getRoomMessages() {
    return this.state.messages.filter((message) => {
-     return message.roomID === this.props.roomID
+     return message.roomID === this.props.currentRoomId;
    });
  }
 
   render() {
     return (
       <div>
-          <ul>
+          <ul className="messagecontent">
             {
               this.getRoomMessages().map( (message, index) => {
                 return (
-                  <li key={message.key}>{message.content}</li>
+                  <li className="individualmessage"
+                      key={message.key}>{message.content}</li>
                 )
               })
             }
           </ul>
-          <form onSubmit={ (event) => this.handleSubmit(event) }>
-             <input
-                 className="Input"
-                 type="text"
-                 onChange={(event) => this.handleChange(event)}
-                 value={ this.state.newMessageSubmission }
-                 ref={(input) => this.input=input}/>
-             <button
-                 className="AddButton"
-                 onClick={this.createMessage}>Send Message</button>
-           </form>
+          <ul className="messagetimestamp">
+            {
+              this.getRoomMessages().map( (message, index) => {
+                return (
+                  <li className="individualmessage"
+                      key={message.key}>{message.username} : {message.sentAt}</li>
+                )
+              })
+            }
+          </ul>
+          {
+            this.props.currentRoomId && <form className="sendmessageform"
+                                              onSubmit={ (e) => this.handleSubmit(e) }>
+               <input
+                   className="MessageInput"
+                   type="text"
+                   onChange={ (e) => this.handleChange(e) }
+                   value={ this.state.newMessageSubmission }
+                   ref={ (input) => this.input=input }
+                   placeholder="type your message"  />
+               <button
+                   className="AddButton"
+                   onClick={this.createMessage}>Send Message</button>
+             </form>
+          }
       </div>
   )
  }

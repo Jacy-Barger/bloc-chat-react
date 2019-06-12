@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './../App.css';
 
 class RoomList extends Component {
   constructor(props) {
@@ -22,42 +23,47 @@ componentDidMount() {
    }
 
 
-createRoom = (event) => {
+createRoom = (e) => {
   this.roomsRef.push({
     name: this.input.value
   });
 }
 
-handleSubmit = (event) => {
-  event.preventDefault();
+handleSubmit = (e) => {
+  e.preventDefault();
   if (!this.state.newRoomSubmission) {return}
   this.setState({  newRoomSubmission: '' });
 }
 
-handleChange = (event) => {
-  this.setState({ newRoomSubmission: event.target.value })
+handleChange = (e) => {
+  this.setState({ newRoomSubmission: e.target.value })
 }
 
 
 render() {
   return (
     <div className="RoomList">
-       <ul>
+       <ul className="rooms">
          {
            this.state.rooms.map( (room, index) => {
              return (
-               <li key={room.key}>{room.name}</li>
+               <li
+                className="individualroom"
+                onClick={() => this.props.selectedRoom(room.key)}
+                key={room.key}
+               >{room.name}</li>
              )
            })
          }
        </ul>
-       <form onSubmit={ (event) => this.handleSubmit(event) }>
+       <form onSubmit={ (e) => this.handleSubmit(e) }>
           <input
               className="Input"
               type="text"
-              onChange={(event) => this.handleChange(event)}
+              onChange={(e) => this.handleChange(e)}
               value={ this.state.newRoomSubmission }
-              ref={(input) => this.input=input}/>
+              ref={(input) => this.input=input}
+              placeholder="add your own room..."/>
           <button
               className="AddButton"
               onClick={this.createRoom}>Add New Room</button>
