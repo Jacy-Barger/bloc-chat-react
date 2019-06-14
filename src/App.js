@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import RoomList from './components/RoomList'
 import MessageList from './components/MessageList'
+import User from './components/User'
 import * as firebase from 'firebase';
 
-// Your web app's Firebase configuration
+
  var firebaseConfig = {
    apiKey: "AIzaSyCPI9oCmTR_0bj8UXcub2K1mu6Q9hXE6us",
    authDomain: "bloc-chat-react-5f2d5.firebaseapp.com",
@@ -14,7 +15,7 @@ import * as firebase from 'firebase';
    messagingSenderId: "905849312906",
    appId: "1:905849312906:web:993b0d2228ee8b66"
  };
- // Initialize Firebase
+
  firebase.initializeApp(firebaseConfig);
 
 class App extends Component {
@@ -22,34 +23,70 @@ class App extends Component {
     super(props);
   this.state = {
       currentRoomId: '',
+      userName: '',
+      isLoggedIn: false
   };
 }
+
+//Set a Default Room that the App starts with.
+
+
 
 selectedRoom = (id) => {
   this.setState({
     currentRoomId: id,
+
   });
 }
+
+setUser = (user) => {
+  this.setState({
+    userName: user
+  });
+}
+
+logIn = (props) => {
+  this.setState({
+    isLoggedIn: true,
+ })
+}
+
+logOut = (props) => {
+  this.setState({
+    isLoggedIn: false,
+  })
+}
+
 
   render() {
   return (
     <div className="App">
-      <header>
-        <p className="Header">
-          Bloc Chat
-        </p>
-      </header>
-        <div className="List">
-          <RoomList
-           firebase={firebase}
-           selectedRoom={this.selectedRoom}
-         />
-        </div>
-        <div className="Message">
-          <MessageList
-            firebase={firebase}
-            currentRoomId={this.state.currentRoomId}
-          />
+        <header>
+          <p className="Header">
+            Bloc Chat
+          </p>
+        </header>
+          <div className="List">
+            <RoomList
+             firebase={firebase}
+             selectedRoom={this.selectedRoom}
+           />
+          </div>
+          <div className="Message">
+            <MessageList
+              firebase={firebase}
+              currentRoomId={this.state.currentRoomId}
+            />
+          <div className="button">
+            <User
+              firebase={firebase}
+              setUser={this.setUser}
+              userName={this.state.userName}
+              logIn={this.logIn}
+              logOut={this.logOut}
+              isLoggedIn={this.state.isLoggedIn}
+            />
+          </div>
        </div>
     </div>
   );
