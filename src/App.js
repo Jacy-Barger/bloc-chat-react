@@ -28,14 +28,11 @@ class App extends Component {
   };
 }
 
-//Set a Default Room that the App starts with.
-
 
 
 selectedRoom = (id) => {
   this.setState({
     currentRoomId: id,
-
   });
 }
 
