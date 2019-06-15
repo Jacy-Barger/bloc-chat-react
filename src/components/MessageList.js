@@ -28,7 +28,7 @@ this.state = {
      content: this.state.newMessageSubmission,
      roomID: this.props.currentRoomId,
      sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
-     username: "Bob",
+     username: this.props.userName.displayName,
    });
  }
 

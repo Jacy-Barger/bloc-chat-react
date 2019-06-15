@@ -73,6 +73,7 @@ logOut = (props) => {
             <MessageList
               firebase={firebase}
               currentRoomId={this.state.currentRoomId}
+              userName={this.state.userName}
             />
           <div className="button">
             <User
