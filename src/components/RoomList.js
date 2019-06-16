@@ -60,7 +60,9 @@ class RoomList extends Component {
              })
            }
          </ul>
-         <form onSubmit={ (e) => this.handleSubmit(e) }>
+         <form
+            className="addroomform"
+            onSubmit={ (e) => this.handleSubmit(e) }>
             <input
               className="Input"
               type="text"

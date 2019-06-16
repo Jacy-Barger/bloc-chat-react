@@ -37,6 +37,8 @@
 /*App.css Component*/
 /*--------------------------------*/
 
+/*App.js Compnent*/
+
 .App {
   margin-right: 80%;
   min-height: 100vh;
@@ -53,6 +55,10 @@
   padding-left: 20px;
   font-size: 30px;
 }
+
+
+
+/*MessageList Compnent*/
 
 .Message {
   display: inline-flex;
@@ -82,6 +88,10 @@
   width: 700px;
 }
 
+
+
+/*RoomList Compnent*/
+
 .rooms:hover {
   cursor: pointer;
 }
@@ -100,4 +110,29 @@
 .individualmessage {
   list-style: none;
   padding: 5px;
+}
+
+.addroomform {
+  position: fixed;
+  top: 85%
+}
+
+.AddButton {
+  position: fixed;
+  bottom: 8%;
+  left: 4%;
+  background-color: #eee;
+}
+
+.AddButton:hover {
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.Input {
+  position: fixed;
+  left: .5%;
+  width: 190px;
+  border: black 3px;
+  padding: 4px;
 }
