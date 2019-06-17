@@ -22,15 +22,17 @@ class User extends Component {
 
   render() {
     return (
-      <div>
+      <div className="mainuserform">
+      { this.props.userName ?
         <button type="submit"
                 onClick={this.signIn}
-                className='userutton'>Login
-        </button>
+                className='loginbutton'>Login
+        </button> :
         <button type="submit"
                 onClick={this.signOut}
-                className='userbutton'>Sign Out
+                className='signoutbutton'>Sign Out
         </button>
+      }
         <p className='namedisplay'> Current User:
                                       { this.props.userName ?
                                         this.props.userName.displayName :

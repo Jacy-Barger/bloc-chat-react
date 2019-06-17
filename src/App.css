@@ -136,3 +136,32 @@
   border: black 3px;
   padding: 4px;
 }
+
+
+
+/*User Compnent*/
+
+.mainuserform {
+  position: fixed;
+  left: 80%;
+  color: black;
+  top: 1%;
+}
+
+.loginbutton {
+  position: fixed;
+  right: 8%;
+  background-color: #5971f2;
+  color: #fff;
+  padding: 3px;
+  width: 50px;
+}
+
+.signoutbutton {
+  position: fixed;
+  right: 8%;
+  background-color: #5971f2;
+  color: #fff;
+  padding: 3px;
+  width: 60px;
+}
