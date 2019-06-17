@@ -85,7 +85,7 @@ class MessageList extends Component {
               placeholder="type your message..."
            />
            <button
-              className="AddButton"
+              className="addmessagebutton"
               onClick={this.createMessage}>Send Message
            </button>
         </form>

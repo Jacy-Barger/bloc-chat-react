@@ -81,13 +81,30 @@
 
 .sendmessageform {
   position: fixed;
-  top: 85%
+  bottom: 12%
 }
 
 .MessageInput {
   width: 700px;
+  padding: 3px;
 }
 
+.addmessagebutton {
+  position: fixed;
+  bottom: 8%;
+  width: 120px;
+  left: 23.5%;
+  background-color: #eee
+}
+
+.addmessagebutton:hover {
+  position: fixed;
+  bottom: 8%;
+  width: 120px;
+  left: 23.5%;
+  background-color: #fff;
+  cursor: pointer;
+}
 
 
 /*RoomList Compnent*/
@@ -117,16 +134,21 @@
   top: 85%
 }
 
-.AddButton {
+.addroombutton {
   position: fixed;
   bottom: 8%;
   left: 4%;
-  background-color: #eee;
+  background-color: #e6e6e6;
+  width: 105px;
 }
 
-.AddButton:hover {
+.addroombutton:hover {
   cursor: pointer;
   background-color: #fff;
+  position: fixed;
+  bottom: 8%;
+  left: 4%;
+  width: 105px;
 }
 
 .Input {
@@ -145,23 +167,39 @@
   position: fixed;
   left: 80%;
   color: black;
-  top: 1%;
+  top: 2%;
 }
 
 .loginbutton {
   position: fixed;
-  right: 8%;
+  right: 10%;
   background-color: #5971f2;
   color: #fff;
   padding: 3px;
   width: 50px;
 }
 
+.loginbutton:hover {
+  background-color: #788cf4;
+  cursor: pointer
+}
+
 .signoutbutton {
   position: fixed;
-  right: 8%;
+  right: 10%;
   background-color: #5971f2;
   color: #fff;
   padding: 3px;
   width: 60px;
+}
+
+.signoutbutton:hover {
+  background-color: #788cf4;
+  cursor: pointer;
+}
+
+.namedisplay {
+  position: fixed;
+  top: 0%;
+  right: 18%;
 }

@@ -25,12 +25,12 @@ class User extends Component {
       <div className="mainuserform">
       { this.props.userName ?
         <button type="submit"
-                onClick={this.signIn}
-                className='loginbutton'>Login
-        </button> :
-        <button type="submit"
                 onClick={this.signOut}
                 className='signoutbutton'>Sign Out
+        </button> :
+        <button type="submit"
+                onClick={this.signIn}
+                className='loginbutton'>Login
         </button>
       }
         <p className='namedisplay'> Current User:

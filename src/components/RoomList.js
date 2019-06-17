@@ -72,7 +72,7 @@ class RoomList extends Component {
               placeholder="add your own room..."
             />
             <button
-              className="AddButton"
+              className="addroombutton"
               onClick={this.createRoom}
             >Add New Room</button>
           </form>
