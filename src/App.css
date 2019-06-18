@@ -114,6 +114,13 @@
 
 /*RoomList Compnent*/
 
+.rooms {
+  position: fixed;
+  top: 15%;
+  padding-left: 0;
+  left: 2.3%;
+}
+
 .rooms:hover {
   cursor: pointer;
 }
@@ -125,8 +132,10 @@
 
 .individualroom:hover {
   background-color: #0a7091;
-  margin-right: 50px;
-  display: inline-block;
+}
+
+#selectedroom {
+  background-color: #0a7091;
 }
 
 .individualmessage {

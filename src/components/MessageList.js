@@ -29,6 +29,7 @@ class MessageList extends Component {
       roomID: this.props.currentRoomId,
       sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
       username: this.props.userName.displayName,
+      created: Date.now(),
     });
   }
 
@@ -66,7 +67,7 @@ class MessageList extends Component {
               this.getRoomMessages().map( (message, index) => {
                 return (
                   <li className="individualmessage"
-                      key={message.key}>{message.username} : {message.sentAt}
+                      key={message.key}>{message.username} : {(message.created).format('h:mm a')}
                   </li>
                 )
              })
