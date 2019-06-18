@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './../App.css';
+import moment from 'moment';
 
 class MessageList extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class MessageList extends Component {
       content: this.state.newMessageSubmission,
       roomID: this.props.currentRoomId,
       sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
-      username: this.props.userName.displayName,
+      username: (this.props.userName ? this.props.userName.displayName : 'Guest Account'),
       created: Date.now(),
     });
   }
@@ -67,7 +68,7 @@ class MessageList extends Component {
               this.getRoomMessages().map( (message, index) => {
                 return (
                   <li className="individualmessage"
-                      key={message.key}>{message.username} : {(message.created).format('h:mm a')}
+                      key={message.key}>{message.username} @ {moment(message.created).format('dddd h:mm a')}
                   </li>
                 )
              })
