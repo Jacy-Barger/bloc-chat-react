@@ -70,13 +70,15 @@
 
 .messagecontent {
   position: fixed;
-  bottom: 80%;
+  margin-bottom: 0;
+  top: 7%;
 }
 
 .messagetimestamp {
   position: fixed;
   left: 75%;
-  bottom: 80%;
+  margin-bottom: 0;
+  top: 7%;
 }
 
 .sendmessageform {
@@ -85,8 +87,11 @@
 }
 
 .MessageInput {
-  width: 700px;
-  padding: 3px;
+  width: 950px;
+  position: fixed;
+  padding: 6px;
+  bottom: 12%;
+  left: 23.5%;
 }
 
 .addmessagebutton {
@@ -137,7 +142,7 @@
 .addroombutton {
   position: fixed;
   bottom: 8%;
-  left: 4%;
+  left: 6%;
   background-color: #e6e6e6;
   width: 105px;
 }
@@ -147,14 +152,14 @@
   background-color: #fff;
   position: fixed;
   bottom: 8%;
-  left: 4%;
+  left: 6%;
   width: 105px;
 }
 
 .Input {
   position: fixed;
   left: .5%;
-  width: 190px;
+  width: 265px;
   border: black 3px;
   padding: 4px;
 }

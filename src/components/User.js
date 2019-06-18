@@ -33,10 +33,10 @@ class User extends Component {
                 className='loginbutton'>Login
         </button>
       }
-        <p className='namedisplay'> Current User:
-                                      { this.props.userName ?
-                                        this.props.userName.displayName :
-                                        " Guest"}
+        <p className='namedisplay'> { this.props.userName ?
+                                      'Current User: ' + this.props.userName.displayName :
+                                      'Logged Out'}
+
         </p>
       </div>
     )
