@@ -67,6 +67,7 @@ class App extends Component {
             <RoomList
              firebase={firebase}
              selectedRoom={this.selectedRoom}
+             currentRoomId={this.state.currentRoomId}
             />
           </div>
           <div className="Message">

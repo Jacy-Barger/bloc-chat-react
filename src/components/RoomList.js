@@ -52,7 +52,7 @@ class RoomList extends Component {
              this.state.rooms.map((room, index) => {
                return (
                  <li
-                  className="individualroom"
+                  className={this.props.currentRoomId === room.key ? 'selectedroom' : 'individualroom'}
                   onClick={() => this.props.selectedRoom(room.key)}
                   key={room.key}
                  >{room.name}</li>

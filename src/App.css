@@ -42,7 +42,7 @@
 .App {
   margin-right: 80%;
   min-height: 100vh;
-  background-color: #5971f2;
+  background-color: #2a49ee;
   color: #fff;
   font-family: 'lato', 'arial', 'sans-serif';
   font-weight: 600;
@@ -72,11 +72,12 @@
   position: fixed;
   margin-bottom: 0;
   top: 7%;
+  left: 21%;
 }
 
 .messagetimestamp {
   position: fixed;
-  left: 75%;
+  right: 11%;
   margin-bottom: 0;
   top: 7%;
 }
@@ -128,14 +129,19 @@
 .individualroom {
   list-style: none;
   padding: 5px;
+  width: 200px;
 }
 
 .individualroom:hover {
-  background-color: #0a7091;
+  background-color: #5971f2;
+  width: 200px;
 }
 
-#selectedroom {
-  background-color: #0a7091;
+.selectedroom {
+  list-style: none;
+  padding: 5px;
+  background-color: #5971f2;
+  width: 200px;
 }
 
 .individualmessage {
@@ -187,7 +193,7 @@
 .loginbutton {
   position: fixed;
   right: 10%;
-  background-color: #5971f2;
+  background-color: #2a49ee;
   color: #fff;
   padding: 3px;
   width: 50px;
